@@ -18,7 +18,6 @@ In this post, I will show how to use the decorator pattern to enhance the Fetch 
 
 A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. They key point is that a decorator function returns a modified version of the original function.
 
-
 ## Logging decorator
 
 The simplest decorator to implement is the logging decorator. It simply logs the url and the response of the http request. Here is the code:
@@ -110,6 +109,14 @@ const fetchWithRetryAndLogger = withLogger(withRetry(fetch, { retryCount: 3 }));
 fetchWithRetryAndLogger("https://jsonplaceholder.typicode.com/todos/1");
 ```
 
+This [github repository](https://github.com/raysca/super-fetch) contains the full code for the decorators discussed in this post.
+
 ## Conclusion
 
 The decorator pattern is a simple and elegant way to extend the behavior of a function without explicitly modifying it. It is a powerful tool in the hands of a developer and can be used to solve a lot of problems. In this post, I have shown how to use the decorator pattern to enhance the Fetch API and add some features that are essential for making http requests in a production environment.
+
+## References
+
+- [Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
+- [Function composition](https://en.wikipedia.org/wiki/Function_composition#:~:text=In%20mathematics%2C%20function%20composition%20is,the%20function%20f%20to%20x.)
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
