@@ -6,11 +6,10 @@ date:   2023-10-10 17:52:34 +0100
 
 Like most full stack javascript developers, I have come to love the web Fetch API. It is a simple and elegant way to make http requests but the Fetch API lacks some features (and rightly so) that are essential for making http requests in a production environment. Here are some of those features:
 
-- Retries
-- Timeout
-- Logging
-- Error handling
-- Caching (None browser environments)
+- [Retry](https://github.com/raysca/super-fetch/blob/main/src/retry.ts)
+- [Timeout](https://github.com/raysca/super-fetch/blob/main/src/timeout.ts)
+- [Logging](https://github.com/raysca/super-fetch/blob/main/src/log.ts)
+- [Headers](https://github.com/raysca/super-fetch/blob/main/src/headers.ts)
 
 In this post, I will show how to use the decorator pattern to enhance the Fetch API and add some of these features without modifying the Fetch API itself.
 
