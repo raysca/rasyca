@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "rayca-94e78",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
