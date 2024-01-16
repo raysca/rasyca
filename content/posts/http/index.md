@@ -1,5 +1,5 @@
 ---
-title: "What every full stack engineer should know about HTTP"
+title: "HTTP Refresher"
 date: 2021-10-10T11:30:03+00:00
 ---
 
@@ -12,7 +12,7 @@ something new about HTTP.
 
 If I missed anything, please let me know in the comments below. Happy reading!
 
-## URL
+## What is a URL
 
 URLs are addresses that are used to access resources on the internet and an
 important part of using HTTP. They are made up of a protocol, domain, path,
@@ -22,7 +22,7 @@ These are the components of a URL:
 
 | Name     | Description                                                                                                                   | Example             |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| Protocol | The protocol that will be used to access the resource. Most browsers now defaults to https unless explicitly stated otherwise | `https`             |
+| Protocol | The protocol that will be used to access the resource. Most browsers now defaults to https unless explicitly stated otherwise | `https` | `http`             |
 | Domain   | The domain that the resource is accessed from.                                                                                | `example.com`       |
 | Path     | The path where the resource resides                                                                                           | `/path/to/resource` |
 | Query    | Queries are extra information sent to the server to customize the request                                                     | `?query=string`     |
@@ -38,7 +38,7 @@ Here is an example of a URL:
 https://username:password@example.com/path/to/resource?query=string#fragment
 ```
 
-## HTTP Request Methods
+## HTTP Methods
 
 HTTP requests are made up of a method, path, headers, and body. The method is
 the most important part of the request because it tells the server what to do
@@ -190,13 +190,13 @@ server. It is rarely used in practice. It is good for debugging purposes. Lets
 look at an example of a request going through the internet. The figure below
 what most be happening when you make a request to a server.
 
-![HTTP Request](/assets/http/request_no_proxy.png)
+![HTTP Request](images/request_no_proxy.png)
 
 but in reality, the requests usually go through multiple proxies before reaching
 their destination and each proxy can potentially modify the request. The figure
 below shows what happens when a request goes through a proxy.
 
-![HTTP Request](/assets/http/request_with_proxy.png)
+![HTTP Request](images/request_with_proxy.png)
 
 This is where the `TRACE` method comes in handy. When web servers receive a
 `TRACE` request, they effectively just echo the request back to the client.
@@ -248,7 +248,7 @@ can be slow because each request has to wait for the previous request to finish
 before it can be sent. This limitation applies to make other requests like
 `CORS`.
 
-[![HTTP 1.1](/assets/http/http_1.1.png)](/assets/http/http_1.1.png)
+![HTTP 1.1](images/http_1.1.png)
 
 HTTP 2 uses a single connection to send multiple requests to the same host if
 the server supports http 2. This means that if you have a web page with multiple
@@ -256,7 +256,7 @@ resources, the browser will have to make a single request to the server to get
 all the resources. This is much faster because the browser does not have to wait
 for the previous request to finish before it can send the next request.
 
-[![HTTP 2](/assets/http/http_2.png)](/assets/http/http_1.1.png)
+![HTTP 2](images/http_2.png)
 
 ## HTTP Response Codes
 
@@ -349,7 +349,7 @@ The image below shows what happens when a web page attempts to make a CORS to
 the bar.com domain to fetch a list of items. The browser will first make a
 `Preflight` OPTIONS request to check with bar.com if this request is permitted.
 
-![CORS](/assets/http/cors.png)
+![CORS](images/cors.png)
 
 ## Authentication
 
